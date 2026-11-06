@@ -343,8 +343,14 @@ button { font: inherit; color: inherit; }
   position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
   padding: 40px; border-radius: var(--radius); background: var(--white); text-align: center;
 }
-.form__done[hidden] { display: none; }
-.form__done b { font-size: 40px; }
+.form__done[hidden], .form__fail[hidden] { display: none; }
+.form__done b, .form__fail b { font-size: 40px; }
+.form__fail {
+  position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+  padding: 40px; border-radius: var(--radius); background: var(--white); text-align: center;
+}
+.form__fail .form__btns { justify-content: center; flex-wrap: wrap; }
+.form__retry { padding: 4px 0; border: 0; border-bottom: 1px solid currentColor; background: none; cursor: pointer; opacity: .7; }
 
 /* ---------- подвал ---------- */
 .footer { background: var(--lime); color: var(--ink); padding: 80px 0 40px; min-height: 434px; display: flex; flex-direction: column; justify-content: space-between; }

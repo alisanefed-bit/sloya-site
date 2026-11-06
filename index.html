@@ -175,7 +175,7 @@
   </section>
 
   <section class="contact dark" id="contacts">
-    <form class="form" id="brief" action="https://formsubmit.co/alisanefed@gmail.com" method="POST" enctype="multipart/form-data" target="fs-frame" novalidate>
+    <form class="form" id="brief" action="https://formsubmit.co/alisanefed@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
       <h2 class="form__title">Форма обратной связи</h2>
       <p class="form__sub">Ответим в течение рабочего дня</p>
 
@@ -230,8 +230,17 @@
         <b>Спасибо, заявка у нас!</b>
         <span>Скоро свяжемся. Если срочно — пишите в <a href="https://t.me/alisks_design" target="_blank" rel="noopener">Telegram</a>.</span>
       </div>
+
+      <div class="form__fail" role="alert" hidden>
+        <b>Не получилось отправить</b>
+        <span>Сервис заявок сейчас не отвечает. Напишите нам напрямую — текст заявки уже собран:</span>
+        <div class="form__btns">
+          <a class="btn btn--sm" data-mailto href="mailto:alisanefed@gmail.com">Отправить письмом</a>
+          <a class="btn btn--ink" href="https://t.me/alisks_design" target="_blank" rel="noopener">Написать в Telegram</a>
+        </div>
+        <button class="form__retry" type="button">Попробовать ещё раз</button>
+      </div>
     </form>
-    <iframe name="fs-frame" class="hp" title="" tabindex="-1" aria-hidden="true"></iframe>
   </section>
 </div>
 

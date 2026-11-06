@@ -217,14 +217,13 @@ $$('.chips input').forEach(chip => chip.addEventListener('change', () => {
 // ---- форма ----
 (function form() {
   const f = $('#brief');
-  const frame = $('iframe[name="fs-frame"]');
   const ta = $('#f-msg', f);
   const file = $('.attach input', f);
   const attach = $('.attach', f);
   const fileName = $('.attach__name', f);
   const clear = $('.attach__clear', f);
   const done = $('.form__done', f);
-  let sent = false;
+  const fail = $('.form__fail', f);
 
   const grow = () => { ta.style.height = 'auto'; ta.style.height = ta.scrollHeight + 'px'; };
   ta.addEventListener('input', grow);
@@ -248,7 +247,27 @@ $$('.chips input').forEach(chip => chip.addEventListener('change', () => {
   const consent = $('.consent input', f);
   consent.addEventListener('change', () => consent.parentElement.classList.remove('is-bad'));
 
-  f.addEventListener('submit', e => {
+  // текст заявки для запасного письма, если сервис не ответил
+  const asText = () => {
+    const d = new FormData(f);
+    const services = d.getAll('Услуги[]').join(', ');
+    return [
+      `Имя: ${d.get('Имя')}`,
+      `Контакт: ${d.get('Контакт')}`,
+      services && `Услуги: ${services}`,
+      d.get('Проект') && `О проекте: ${d.get('Проект')}`,
+      file.files[0] && `(файл «${file.files[0].name}» пришлю ответным письмом)`,
+    ].filter(Boolean).join('\n');
+  };
+  const showFail = () => {
+    $('[data-mailto]', fail).href =
+      `mailto:alisanefed@gmail.com?subject=${encodeURIComponent('Заявка с сайта SLOYA')}&body=${encodeURIComponent(asText())}`;
+    fail.hidden = false;
+  };
+  $('.form__retry', fail).addEventListener('click', () => { fail.hidden = true; f.requestSubmit(); });
+
+  f.addEventListener('submit', async e => {
+    e.preventDefault();
     let firstBad = null;
     checks.forEach(([input, ok]) => {
       const bad = !ok(input.value);
@@ -256,16 +275,25 @@ $$('.chips input').forEach(chip => chip.addEventListener('change', () => {
       if (bad && !firstBad) firstBad = input;
     });
     if (!consent.checked) { consent.parentElement.classList.add('is-bad'); firstBad ||= consent; }
-    if (firstBad) { e.preventDefault(); firstBad.focus(); return; }
-    f.classList.add('is-sending');
-    sent = true;
-  });
+    if (firstBad) { firstBad.focus(); return; }
 
-  // ответ сервиса приходит в скрытый iframe
-  frame.addEventListener('load', () => {
-    if (!sent) return;
-    sent = false;
+    f.classList.add('is-sending');
+    // успехом считаем только явный ответ сервиса, а не любую загрузку страницы
+    let ok = false;
+    try {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 20000);
+      const res = await fetch(f.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+        method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' }, signal: ctrl.signal,
+      });
+      clearTimeout(timer);
+      const json = res.ok ? await res.json().catch(() => ({})) : {};
+      // первая заявка возвращает просьбу активировать форму — письмо владельцу при этом уходит
+      ok = String(json.success) === 'true' || /activat/i.test(json.message || '');
+    } catch (_) { ok = false; }
     f.classList.remove('is-sending');
+
+    if (!ok) { showFail(); return; }
     done.hidden = false;
     f.reset();
     file.dispatchEvent(new Event('change'));
