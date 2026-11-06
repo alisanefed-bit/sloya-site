@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SLOYA — студия визуальных решений</title>
+  <meta name="description" content="Создаём брендинг, сайты и визуальную коммуникацию, которые помогают вашему бизнесу расти.">
+  <link rel="preload" href="assets/fonts/MazzardM-Light.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/MazzardH-Bold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ ШАПКА ============ -->
+<header class="header" id="top">
+  <div class="header__in">
+    <a class="header__logo" href="#top" aria-label="SLOYA — на главную">
+      <img src="assets/logo-sloya.svg" width="85" height="33" alt="SLOYA">
+    </a>
+    <nav class="nav" aria-label="Основное меню">
+      <a class="pill" href="#about">о нас</a>
+      <a class="pill" href="#services">услуги</a>
+      <a class="pill" href="#cases">проекты</a>
+      <a class="pill" href="#contacts">контакты</a>
+    </nav>
+    <div class="header__write">
+      <span>написать нам:</span>
+      <a href="https://t.me/alisks_design" target="_blank" rel="noopener" aria-label="Telegram">
+        <img src="assets/icon-social-1.svg" width="25" height="25" alt="">
+      </a>
+      <a href="#contacts" data-whatsapp aria-label="WhatsApp">
+        <img src="assets/icon-social-2.svg" width="25" height="25" alt="">
+      </a>
+    </div>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ ПЕРВЫЙ ЭКРАН ============ -->
+<section class="hero">
+  <div class="hero__in">
+    <div class="hero__grid" aria-hidden="true"><div class="hero__grid-lines"></div></div>
+    <h1 class="hero__title">Студия визуальных решений</h1>
+    <img class="hero__brush" src="assets/img/brush.jpg" width="507" height="762" alt="" aria-hidden="true">
+    <img class="hero__sloy" src="assets/img/sloy3d.png" width="1017" height="837" alt="Объёмные буквы SLOYA">
+    <p class="hero__lead">Создаём брендинг, сайты <br>и визуальную коммуникацию, которые помогают Вашему <br>бизнесу расти</p>
+    <a class="btn hero__btn" href="#contacts">Обсудить проект</a>
+  </div>
+</section>
+
+<!-- ============ О НАС ============ -->
+<section class="about dark" id="about">
+  <div class="marquee" aria-label="Бренды, с которыми мы работали">
+    <div class="marquee__track">
+      <div class="marquee__set">
+        <img src="assets/logos/01.svg" width="62" height="54" alt="Peugeot Motocycles">
+        <img src="assets/logos/02.svg" width="78" height="9" alt="СмартЛомбард">
+        <img src="assets/logos/03.svg" width="67" height="21" alt="Danone">
+        <img src="assets/logos/04.svg" width="83" height="58" alt="Eisai">
+        <img src="assets/logos/05.svg" width="86" height="15" alt="МегаФон">
+        <img src="assets/logos/06.svg" width="50" height="29" alt="STADA">
+        <img src="assets/logos/07.svg" width="62" height="12" alt="Аэрофлот">
+        <img src="assets/logos/08.svg" width="37" height="38" alt="">
+        <img src="assets/logos/09.svg" width="75" height="42" alt="Denzel">
+        <img src="assets/logos/10.svg" width="73" height="6" alt="Homester.pro">
+        <img src="assets/logos/11.svg" width="52" height="28" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="container about__in">
+    <div class="about__text">
+      <h2 class="h2">О нас</h2>
+      <p>Мы ценим оригинальное мышление, глубокое исследование форм и жанров, а также стремление раскрывать визуальную коммуникацию бренда на новых уровнях.</p>
+      <p>Для нас дизайн — это содержательная структура, продуманный визуальный язык и эмоциональная выразительность. Наши решения находят отклик, потому что они ясны, точны и созданы с вниманием к каждой детали.</p>
+      <a class="btn" href="#contacts">Обсудить проект</a>
+    </div>
+    <ul class="facts">
+      <li class="fact">
+        <span class="fact__label">Многолетний опыт <br>в дизайне</span>
+        <span class="fact__img"><img src="assets/img/about-1.jpg" alt="" loading="lazy"></span>
+      </li>
+      <li class="fact">
+        <span class="fact__label">Десятки довольных клиентов</span>
+        <span class="fact__img"><img src="assets/img/about-2.jpg" alt="" loading="lazy"></span>
+      </li>
+      <li class="fact">
+        <span class="fact__label">Опыт в работе <br>с международными брендами</span>
+        <span class="fact__img"><img src="assets/img/about-3.jpg" alt="" loading="lazy"></span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ УСЛУГИ ============ -->
+<section class="services" id="services">
+  <div class="container">
+    <h2 class="h2">Услуги</h2>
+    <div class="svc-map">
+      <button class="svc svc--1" type="button" data-service="UX/UI-дизайн">
+        <span class="svc__text"><b>UX/UI-дизайн</b><span>Дизайн сайтов</span><span>Дизайн приложений</span></span>
+        <span class="svc__dot"><img src="assets/img/svc-uxui.png" alt="" loading="lazy"></span>
+      </button>
+      <button class="svc svc--2" type="button" data-service="Брендинг">
+        <span class="svc__text"><b>Брендинг</b><span>Логотип</span><span>Брендбук</span><span>Айдентика</span></span>
+        <span class="svc__dot"><img src="assets/img/svc-branding.png" alt="" loading="lazy"></span>
+      </button>
+      <button class="svc svc--3" type="button" data-service="Полиграфия">
+        <span class="svc__text"><b>Полиграфия</b><span>Мерч</span><span>Брошюры</span><span>Визитки</span><span>Сертификаты</span></span>
+        <span class="svc__dot"><img src="assets/img/svc-print.png" alt="" loading="lazy"></span>
+      </button>
+      <button class="svc svc--4" type="button" data-service="Веб-дизайн">
+        <span class="svc__text"><b>Веб-дизайн</b><span>Дизайн соц сетей</span><span>Баннеры</span><span>Афиши</span></span>
+        <span class="svc__dot"><img src="assets/img/svc-web.png" alt="" loading="lazy"></span>
+      </button>
+      <button class="svc svc--5" type="button" data-service="Дизайн презентаций">
+        <span class="svc__text"><b>Дизайн презентаций</b><span>Кликабельный PDF</span><span>Keynote/Ppt/Figma</span></span>
+        <span class="svc__dot"><img src="assets/img/svc-presentations.png" alt="" loading="lazy"></span>
+      </button>
+    </div>
+    <p class="svc-hint">Нажмите на услугу — она сразу отметится в заявке</p>
+    <a class="btn btn--center" href="#contacts">Заказать дизайн</a>
+  </div>
+</section>
+
+<!-- ============ ТЁМНАЯ ЧАСТЬ: КЕЙСЫ, ПРОЦЕСС, ФОРМА ============ -->
+<div class="dark-wrap">
+  <svg class="dark-wrap__arc" viewBox="0 0 1441 129" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 128.4C212.7 31.5 798.6-104.1 1441 128.4V129H0Z" fill="currentColor"/>
+  </svg>
+
+  <section class="cases dark" id="cases">
+    <h2 class="h2 cases__title">Кейсы</h2>
+    <div class="arc" tabindex="0" aria-roledescription="карусель" aria-label="Кейсы студии">
+      <div class="arc__stage"></div>
+      <button class="arc__nav arc__nav--prev" type="button" aria-label="Предыдущий кейс">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+      <button class="arc__nav arc__nav--next" type="button" aria-label="Следующий кейс">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+    </div>
+    <div class="arc__dots" role="tablist" aria-label="Выбор кейса"></div>
+    <a class="btn btn--center" data-behance href="#" target="_blank" rel="noopener">Смотреть все</a>
+  </section>
+
+  <!-- Новый блок (по комментарию «тут можно ещё какой-то блок»): процесс + Instagram -->
+  <section class="process dark">
+    <div class="container">
+      <h2 class="h2">Как мы работаем</h2>
+      <ol class="steps">
+        <li class="step"><span class="step__n">01</span><b>Бриф</b><span>Обсуждаем задачи, аудиторию и сроки, фиксируем стоимость</span></li>
+        <li class="step"><span class="step__n">02</span><b>Концепция</b><span>Исследуем рынок и предлагаем визуальные направления</span></li>
+        <li class="step"><span class="step__n">03</span><b>Дизайн</b><span>Развиваем выбранную идею и собираем систему с правками</span></li>
+        <li class="step"><span class="step__n">04</span><b>Передача</b><span>Отдаём исходники, гайды и всё, что нужно для запуска</span></li>
+      </ol>
+
+      <a class="insta" href="https://instagram.com/sloya.design" target="_blank" rel="noopener">
+        <span class="insta__text">
+          <span class="insta__kicker">Процесс, свежие работы и закулисье</span>
+          <span class="insta__handle">@sloya.design</span>
+        </span>
+        <span class="insta__pics" aria-hidden="true">
+          <img src="assets/img/case-porfiry.jpg" alt="" loading="lazy">
+          <img src="assets/img/about-1.jpg" alt="" loading="lazy">
+          <img src="assets/img/case-squash.jpg" alt="" loading="lazy">
+        </span>
+        <span class="insta__go" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="contact dark" id="contacts">
+    <form class="form" id="brief" action="https://formsubmit.co/alisanefed@gmail.com" method="POST" enctype="multipart/form-data" target="fs-frame" novalidate>
+      <h2 class="form__title">Форма обратной связи</h2>
+      <p class="form__sub">Ответим в течение рабочего дня</p>
+
+      <input type="hidden" name="_subject" value="Новая заявка с сайта SLOYA">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <fieldset class="chips">
+        <legend>Что нужно сделать?</legend>
+        <label class="chip"><input type="checkbox" name="Услуги[]" value="UX/UI-дизайн"><span>UX/UI-дизайн</span></label>
+        <label class="chip"><input type="checkbox" name="Услуги[]" value="Брендинг"><span>Брендинг</span></label>
+        <label class="chip"><input type="checkbox" name="Услуги[]" value="Полиграфия"><span>Полиграфия</span></label>
+        <label class="chip"><input type="checkbox" name="Услуги[]" value="Веб-дизайн"><span>Веб-дизайн</span></label>
+        <label class="chip"><input type="checkbox" name="Услуги[]" value="Дизайн презентаций"><span>Презентации</span></label>
+        <label class="chip"><input type="checkbox" name="Услуги[]" value="Пока не знаю"><span>Пока не знаю</span></label>
+      </fieldset>
+
+      <div class="field">
+        <input id="f-name" name="Имя" type="text" autocomplete="name" placeholder=" " required>
+        <label for="f-name">Имя</label>
+        <span class="field__err">Как к вам обращаться?</span>
+      </div>
+      <div class="field">
+        <input id="f-contact" name="Контакт" type="text" autocomplete="email" placeholder=" " required>
+        <label for="f-contact">Email или Telegram</label>
+        <span class="field__err">Оставьте email или @ник в Telegram, чтобы мы могли ответить</span>
+      </div>
+      <div class="field">
+        <textarea id="f-msg" name="Проект" rows="1" placeholder=" "></textarea>
+        <label for="f-msg">Расскажите о вашем проекте</label>
+      </div>
+
+      <label class="attach">
+        <input type="file" name="attachment" accept=".pdf,.doc,.docx">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 11.5l-8 8a5 5 0 01-7-7l8.5-8.5a3.3 3.3 0 014.7 4.7L9.7 17.2a1.7 1.7 0 01-2.4-2.4l7.6-7.6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span class="attach__name">Прикрепить файл pdf/doc</span>
+        <button class="attach__clear" type="button" aria-label="Убрать файл" hidden>×</button>
+      </label>
+
+      <label class="consent">
+        <input type="checkbox" name="Согласие на обработку ПД" value="да" required>
+        <span>Соглашаюсь с <a href="privacy.html" target="_blank">политикой обработки персональных данных</a></span>
+      </label>
+
+      <div class="form__btns">
+        <button class="btn btn--sm" type="submit">Отправить</button>
+        <a class="btn btn--ink" href="https://t.me/alisks_design" target="_blank" rel="noopener">Написать в Telegram</a>
+      </div>
+
+      <div class="form__done" hidden>
+        <b>Спасибо, заявка у нас!</b>
+        <span>Скоро свяжемся. Если срочно — пишите в <a href="https://t.me/alisks_design" target="_blank" rel="noopener">Telegram</a>.</span>
+      </div>
+    </form>
+    <iframe name="fs-frame" class="hp" title="" tabindex="-1" aria-hidden="true"></iframe>
+  </section>
+</div>
+
+</main>
+
+<!-- ============ ПОДВАЛ ============ -->
+<footer class="footer">
+  <div class="container footer__in">
+    <div class="footer__brand">
+      <img src="assets/logo-sloya.svg" width="170" height="66" alt="SLOYA">
+      <p>Студия визуальных решений</p>
+    </div>
+    <nav class="footer__col" aria-label="Разделы">
+      <b>Разделы</b>
+      <a href="#about">О нас</a>
+      <a href="#services">Услуги</a>
+      <a href="#cases">Проекты</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="footer__col">
+      <b>Связаться</b>
+      <a href="mailto:alisanefed@gmail.com">alisanefed@gmail.com</a>
+      <a href="https://t.me/alisks_design" target="_blank" rel="noopener">Telegram @alisks_design</a>
+      <a href="https://instagram.com/sloya.design" target="_blank" rel="noopener">Instagram @sloya.design</a>
+      <a data-behance href="#" target="_blank" rel="noopener">Behance</a>
+    </div>
+    <div class="footer__col">
+      <b>Документы</b>
+      <a href="privacy.html">Политика конфиденциальности</a>
+      <a href="privacy.html#consent">Согласие на обработку персональных данных</a>
+    </div>
+  </div>
+  <div class="container footer__legal">
+    <span>© <span data-year>2026</span> SLOYA</span>
+    <span>ИП Алексеева Алиса Дмитриевна · ИНН 772831141167 · ОГРНИП 320774600011331</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
